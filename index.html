@@ -10,9 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ==========================================
-       1. STYLES & TEMA WARNA SOFT PINK (CSS)
-       ========================================== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -31,7 +28,6 @@
       position: relative;
     }
 
-    /* Canvas Latar Belakang Love Bertebangan */
     #canvas-bg {
       position: fixed;
       top: 0;
@@ -42,7 +38,6 @@
       pointer-events: none;
     }
 
-    /* Container Utama Responsive Layar HP */
     .container {
       position: relative;
       z-index: 10;
@@ -51,7 +46,6 @@
       margin: 20px auto;
     }
 
-    /* Kartu Transparan Kaca */
     .card {
       background: rgba(38, 16, 35, 0.72);
       border: 1px solid rgba(240, 160, 210, 0.25);
@@ -74,7 +68,6 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* Subtitle & Title */
     .sub-title {
       font-size: 0.75rem;
       letter-spacing: 3px;
@@ -102,7 +95,6 @@
       margin-bottom: 25px;
     }
 
-    /* Timer Box Countdown */
     .timer-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -132,7 +124,6 @@
       margin-top: 2px;
     }
 
-    /* Tombol Utama Soft Pink Glow */
     .btn-action {
       background: linear-gradient(135deg, #c44582, #8c2859);
       color: #fff;
@@ -152,7 +143,6 @@
       box-shadow: 0 6px 25px rgba(196, 69, 130, 0.7), 0 0 20px rgba(255, 180, 220, 0.5);
     }
 
-    /* Tampilan Surat (Scrollable) */
     .letter-box {
       background: rgba(18, 6, 17, 0.45);
       border: 1px solid rgba(240, 170, 215, 0.18);
@@ -181,7 +171,6 @@
       white-space: pre-wrap;
     }
 
-    /* Animasi kursor mengetik (|) */
     .typing-cursor::after {
       content: '|';
       animation: blink 0.7s infinite;
@@ -194,7 +183,6 @@
       50% { opacity: 0; }
     }
 
-    /* GALERI POLAROID TANPA TERPOTONG */
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -231,7 +219,6 @@
       background: #111;
     }
 
-    /* Video Player */
     .video-wrapper {
       width: 100%;
       border-radius: 18px;
@@ -246,7 +233,6 @@
       display: block;
     }
 
-    /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-thumb { background: rgba(240, 160, 210, 0.4); border-radius: 10px; }
   </style>
@@ -255,9 +241,7 @@
 
   <canvas id="canvas-bg"></canvas>
 
-  <audio id="bg-music" loop preload="auto">
-    <source src="heaven-bryan-adams.mp3" type="audio/mpeg">
-  </audio>
+  <audio id="bg-music" src="heaven-bryan-adams.mp3" loop preload="auto"></audio>
 
   <div class="container">
 
@@ -331,9 +315,9 @@
   <script>
     const music = document.getElementById('bg-music');
     const mainVideo = document.getElementById('mainVideo');
-    const START_TIME_SECONDS = 30; // Detik ke-30 lagu
+    const START_TIME_SECONDS = 0; // Mulai dari awal lagu (detik ke-0)
 
-    // DATA SURAT UCAPAN UNTUK ANIMASI MENGETIK
+    // DATA SURAT UCAPAN
     const letterData = [
       { type: 'h4', text: "HAPPY BIESDAYYY SAYANGG, 🥳🥳🥳🥳💗💞🎂🎂🎂🎂🎂🎂🎂" },
       { type: 'p', text: "selamaaat bertambahh umurrr semogaaa semuaa doa kamu semua impian kamu bisa terwujudd di tahun iniiii, maaaf yaa akuu gaa bisa ngasih apaa apaa cuma bisa doain kamu yangg terbaikkk, semogaa kamu selaluuu bahagiaa, terus diberi kesehatan, dilancarkan rezekinya, dipermudahkan segala urusan kamu, dikelilingi orang orang yang baikk dan bermanfaat, aku selalu doa mudah-mudahan hatimu diberi kelapangan dan kesabaran atas hal apapun, kamu layakk dicintai dan dirayakan dalam segala hal mau hal sekecil apapun yang kamu perbuat layak dirayakan." },
@@ -343,7 +327,6 @@
       { type: 'p', text: "sekali lagi, happy birthday cintaakkuuuuu... aku sayang banget sama kamu, lebih dari apa pun, hari ini, besok, lusa, dan semoga sampai selamanya. 🤍🎂🖤🌈💗🎉" }
     ];
 
-    // LOGIKA MENGETIK OTOMATIS
     let currentParagraph = 0;
     let currentChar = 0;
     let isTyping = false;
@@ -392,7 +375,7 @@
       }
     }
 
-    // A. LOGIKA HITUNG MUNDUR
+    // A. HITUNG MUNDUR (Sesuaikan tanggal jika perlu)
     const targetDate = new Date("September 27, 2026 00:00:00").getTime();
 
     function updateCountdown() {
@@ -421,7 +404,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // B. LOGIKA KONTROL AUDIO VS VIDEO
+    // B. KONTROL AUDIO VS VIDEO
     if (mainVideo) {
       mainVideo.addEventListener('play', () => {
         if (music && !music.paused) music.pause();
@@ -439,16 +422,21 @@
       });
     }
 
-    // C. Pemutar Musik saat "SEE SURPRISE" diklik
+    // C. PEMUTAR MUSIK SAAT TOMBOL "SEE SURPRISE" DIKLIK
     function startSurprise(nextCardStep) {
       if (music) {
         music.currentTime = START_TIME_SECONDS;
-        music.play().catch(err => console.log("Audio play error:", err));
+        var playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log("Autoplay error:", error);
+          });
+        }
       }
       nextStep(nextCardStep);
     }
 
-    // D. Perpindahan Halaman
+    // D. PERPINDAHAN STEP
     function nextStep(stepNumber) {
       clearTimeout(typeTimeout);
       isTyping = false;
