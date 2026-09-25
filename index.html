@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Her Special Day</title>
   
-  <!-- Font Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -43,7 +42,7 @@
       pointer-events: none;
     }
 
-    /* Container Utama */
+    /* Container Utama Responsive Layar HP */
     .container {
       position: relative;
       z-index: 10;
@@ -52,7 +51,7 @@
       margin: 20px auto;
     }
 
-    /* Kartu Transparan Kaca dengan Glowing Soft Pink */
+    /* Kartu Transparan Kaca */
     .card {
       background: rgba(38, 16, 35, 0.72);
       border: 1px solid rgba(240, 160, 210, 0.25);
@@ -166,6 +165,7 @@
       line-height: 1.65;
       color: #f2dbeb;
       margin-bottom: 22px;
+      position: relative;
     }
 
     .letter-box h4 {
@@ -178,6 +178,20 @@
 
     .letter-box p {
       margin-bottom: 14px;
+      white-space: pre-wrap;
+    }
+
+    /* Animasi kursor mengetik (|) */
+    .typing-cursor::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+      color: #f0b5d7;
+      font-weight: bold;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     /* GALERI POLAROID TANPA TERPOTONG */
@@ -239,17 +253,14 @@
 </head>
 <body>
 
-  <!-- Canvas Latar Belakang Love Bertebangan -->
   <canvas id="canvas-bg"></canvas>
 
-  <!-- Element Musik/Audio -->
   <audio id="bg-music" loop preload="auto">
-    <source src="heaven-bryan-adams.mp3" type="audio/mpeg">
+    <source src="heaven-btyan-adams.mp3" type="audio/mpeg">
   </audio>
 
   <div class="container">
 
-    <!-- STEP 1: COUNTDOWN / HALAMAN AWAL -->
     <div class="card active" id="step1">
       <div class="sub-title">✦ MENGHITUNG HARI ✦</div>
       <h1 class="main-title">Her Special Day<br>is Coming</h1>
@@ -266,29 +277,15 @@
       <button class="btn-action" onclick="startSurprise(2)">✦ SEE SURPRISE ♥ ✦</button>
     </div>
 
-    <!-- STEP 2: SURAT UCAPAN LENGKAP -->
     <div class="card" id="step2">
       <h1 class="main-title" style="margin-bottom: 18px;">Happy Birthday</h1>
       
-      <div class="letter-box">
-        <h4>HAPPY BIESDAYYY SAYANGG, 🥳🥳🥳🥳💗💞🎂🎂🎂🎂🎂🎂🎂</h4>
-        
-        <p>selamaaat bertambahh umurrr semogaaa semuaa doa kamu semua impian kamu bisa terwujudd di tahun iniiii, maaaf yaa akuu gaa bisa ngasih apaa apaa cuma bisa doain kamu yangg terbaikkk, semogaa kamu selaluuu bahagiaa, terus diberi kesehatan, dilancarkan rezekinya, dipermudahkan segala urusan kamu, dikelilingi orang orang yang baikk dan bermanfaat, aku selalu doa mudah-mudahan hatimu diberi kelapangan dan kesabaran atas hal apapun, kamu layakk dicintai dan dirayakan dalam segala hal mau hal sekecil apapun yang kamu perbuat layak dirayakan.</p>
-        
-        <p>semogaa hubungan kita bukan cuma lama tapii selamanyaa langgenggg jugaaa hehehe, ayoo kitaaa buktiin kalo hubungan kita ituu bisaaa bertahan lamaaa, akuu bakalan selalu sayangg kamu setiap harii setiap menit setiap detikkk, kamu kalo ada apa apa bilangg yaa ke aku, kamuu sudaaa punyaa pacarrrr jadii haruuss ngomong sebalik nyaa aku pun begituuu, jangan ngambek muluk yeah sayang😁, semoga kita bisa menjadi lebih baik untuk kedepannya, dan di setiap masalah kita harus nyelesain masalahnya bukan hubungannya yeah, dan dengan berbagai masalah yang ada di hubungan kita ini semoga bisa untuk menjadi dan merubah diri kita masing² untuk menjadi ke yang lebih baik yeah sayang, dan kalau ada apaa apaa kita harus saling bicara saling terbuka yea, biar kita saling sama sama tau agar bisa menjadi lebih baik lagi🤍❤️. makasiiiiii udah bikin hidup aku lebih happy, with everything about aku beruntung banget udah ketemu kamu dan kenal kamu i am also very lucky to have you i love you infinitely, jangan ngerasaaa kamu sendirii yaaa sayanggg 🎂🎂🎂🎂🎂🎂🎂🎂🎀🎀🎀🎀🎀🎀❤️❤️❤️❤️❤️❤️❤️ ( 𝗹𝗼𝗽𝘆𝘂𝘂𝘂 𝘀𝗮𝘆𝗮𝗻𝗴)</p>
-        
-        <p><strong>𝟭 𝗹𝗮𝗴𝗶𝗶𝗶𝗶❤️</strong><br>
-        happy birthday sayanggkuu semoga dengan bertambahnya usiamu, semakin sempurna juga imanmu, rajin ibadahnya, selalu diberi kesehatan sama yang mahakuasa, panjang umur, selalu bahagia, berbakti terus sama orangtua, serta segala doa dan cita cita yang kamu inginkan bisa terwujud dan dimudahkan dalam segala urusan. Aamiin 🎂🎂🎂🎂🤍🤍🤍</p>
-        
-        <p>yeyeyy sekarang kamuu ulang tahun dan makin tambah tuwir wirr anak kecil tuwir 🤭🤭😍, sekarang kamu semakin dewasa yang dimana kamu pasti tau yang terbaik maupun yang gak buat diri kamuu, harus lebih dewasa dari sebelumnya yaaa, jangan pernah cape buat perbaiki diri jadi lebih baik lagi, semangat terus buat kejar semua keinginan kamu, kamu pasti bisa sayangg, jangan pernah takut gagal yaa, aku selalu dukung kamu dan support kamu sayang, jangan cape yaa sayangg! semangat terus aku selalu ada disamping kamu, selalu rendah hati, jadi anak baik ya sayangg, selalu sayang sama keluarga yaa, jangan lupa untuk selalu bersyukur yaa byy, semoga apapun yang kamu lakukan hari ini dan hari berikutnya selalu diberi kelancaran serta keselamatan, Aamiin. 🤍🤍🤍🤍🤍🤍🤍</p>
-        
-        <p>sekali lagi, happy birthday cintaakkuuuuu... aku sayang banget sama kamu, lebih dari apa pun, hari ini, besok, lusa, dan semoga sampai selamanya. 🤍🎂🖤🌈💗🎉</p>
-      </div>
+      <div class="letter-box" id="letterContainer">
+        </div>
 
       <button class="btn-action" onclick="nextStep(3)">✦ OUR MEMORIES ➔ ✦</button>
     </div>
 
-    <!-- STEP 3: GALERI FOTO POLAROID -->
     <div class="card" id="step3">
       <div class="sub-title">OUR MEMORIES</div>
       <p class="italic-quote" style="margin-bottom: 15px;">✧ every moment captured in love ✧</p>
@@ -306,7 +303,6 @@
       <button class="btn-action" onclick="nextStep(4)">✦ WATCH VIDEO ➔ ✦</button>
     </div>
 
-    <!-- STEP 4: VIDEO UCAPAN -->
     <div class="card" id="step4">
       <div class="sub-title">A MOMENT FOR YOU</div>
       <p class="italic-quote" style="margin-bottom: 15px;">✧ a special video message ✧</p>
@@ -321,7 +317,6 @@
       <button class="btn-action" onclick="nextStep(5)">✦ BIRTHDAY WISHES ➔ ✦</button>
     </div>
 
-    <!-- STEP 5: PENUTUP / REPLAY -->
     <div class="card" id="step5">
       <h1 class="main-title">With All My Love</h1>
       <p class="italic-quote" style="margin-top: 10px; margin-bottom: 30px;">
@@ -333,13 +328,69 @@
 
   </div>
 
-  <!-- ==========================================
-       2. LOGIKA KODE (JAVASCRIPT)
-       ========================================== -->
   <script>
     const music = document.getElementById('bg-music');
     const mainVideo = document.getElementById('mainVideo');
-    const START_TIME_SECONDS = 30; // Detik ke-30 (Lirik "Baby, you're all that I want")
+    const START_TIME_SECONDS = 30; // Detik ke-30 lagu
+
+    // DATA SURAT UCAPAN UNTUK ANIMASI MENGETIK
+    const letterData = [
+      { type: 'h4', text: "HAPPY BIESDAYYY SAYANGG, 🥳🥳🥳🥳💗💞🎂🎂🎂🎂🎂🎂🎂" },
+      { type: 'p', text: "selamaaat bertambahh umurrr semogaaa semuaa doa kamu semua impian kamu bisa terwujudd di tahun iniiii, maaaf yaa akuu gaa bisa ngasih apaa apaa cuma bisa doain kamu yangg terbaikkk, semogaa kamu selaluuu bahagiaa, terus diberi kesehatan, dilancarkan rezekinya, dipermudahkan segala urusan kamu, dikelilingi orang orang yang baikk dan bermanfaat, aku selalu doa mudah-mudahan hatimu diberi kelapangan dan kesabaran atas hal apapun, kamu layakk dicintai dan dirayakan dalam segala hal mau hal sekecil apapun yang kamu perbuat layak dirayakan." },
+      { type: 'p', text: "semogaa hubungan kita bukan cuma lama tapii selamanyaa langgenggg jugaaa hehehe, ayoo kitaaa buktiin kalo hubungan kita ituu bisaaa bertahan lamaaa, akuu bakalan selalu sayangg kamu setiap harii setiap menit setiap detikkk, kamu kalo ada apa apa bilangg yaa ke aku, kamuu sudaaa punyaa pacarrrr jadii haruuss ngomong sebalik nyaa aku pun begituuu, jangan ngambek muluk yeah sayang😁, semoga kita bisa menjadi lebih baik untuk kedepannya, dan di setiap masalah kita harus nyelesain masalahnya bukan hubungannya yeah, dan dengan berbagai masalah yang ada di hubungan kita ini semoga bisa untuk menjadi dan merubah diri kita masing² untuk menjadi ke yang lebih baik yeah sayang, dan kalau ada apaa apaa kita harus saling bicara saling terbuka yea, biar kita saling sama sama tau agar bisa menjadi lebih baik lagi🤍❤️. makasiiiiii udah bikin hidup aku lebih happy, with everything about aku beruntung banget udah ketemu kamu dan kenal kamu i am also very lucky to have you i love you infinitely, jangan ngerasaaa kamu sendirii yaaa sayanggg 🎂🎂🎂🎂🎂🎂🎂🎂🎀🎀🎀🎀🎀🎀❤️❤️❤️❤️❤️❤️❤️ ( 𝗹𝗼𝗽𝘆𝘂𝘂𝘂 𝘀𝗮𝘆𝗮𝗻𝗴)" },
+      { type: 'p', text: "𝟭 𝗹𝗮𝗴𝗶𝗶𝗶𝗶❤️\nhappy birthday sayanggkuu semoga dengan bertambahnya usiamu, semakin sempurna juga imanmu, rajin ibadahnya, selalu diberi kesehatan sama yang mahakuasa, panjang umur, selalu bahagia, berbakti terus sama orangtua, serta segala doa dan cita cita yang kamu inginkan bisa terwujud dan dimudahkan dalam segala urusan. Aamiin 🎂🎂🎂🎂🤍🤍🤍" },
+      { type: 'p', text: "yeyeyy sekarang kamuu ulang tahun dan makin tambah tuwir wirr anak kecil tuwir 🤭🤭😍, sekarang kamu semakin dewasa yang dimana kamu pasti tau yang terbaik maupun yang gak buat diri kamuu, harus lebih dewasa dari sebelumnya yaaa, jangan pernah cape buat perbaiki diri jadi lebih baik lagi, semangat terus buat kejar semua keinginan kamu, kamu pasti bisa sayangg, jangan pernah takut gagal yaa, aku selalu dukung kamu dan support kamu sayang, jangan cape yaa sayangg! semangat terus aku selalu ada disamping kamu, selalu rendah hati, jadi anak baik ya sayangg, selalu sayang sama keluarga yaa, jangan lupa untuk selalu bersyukur yaa byy, semoga apapun yang kamu lakukan hari ini dan hari berikutnya selalu diberi kelancaran serta keselamatan, Aamiin. 🤍🤍🤍🤍🤍🤍🤍" },
+      { type: 'p', text: "sekali lagi, happy birthday cintaakkuuuuu... aku sayang banget sama kamu, lebih dari apa pun, hari ini, besok, lusa, dan semoga sampai selamanya. 🤍🎂🖤🌈💗🎉" }
+    ];
+
+    // LOGIKA MENGETIK OTOMATIS
+    let currentParagraph = 0;
+    let currentChar = 0;
+    let isTyping = false;
+    let typeTimeout = null;
+
+    function startTypewriter() {
+      const container = document.getElementById('letterContainer');
+      container.innerHTML = '';
+      currentParagraph = 0;
+      currentChar = 0;
+      isTyping = true;
+      typeNextChar();
+    }
+
+    function typeNextChar() {
+      if (!isTyping) return;
+      const container = document.getElementById('letterContainer');
+
+      if (currentParagraph < letterData.length) {
+        const pData = letterData[currentParagraph];
+        let el = container.children[currentParagraph];
+
+        if (!el) {
+          el = document.createElement(pData.type);
+          container.appendChild(el);
+        }
+
+        document.querySelectorAll('.typing-cursor').forEach(c => c.classList.remove('typing-cursor'));
+        el.classList.add('typing-cursor');
+
+        el.innerText = pData.text.substring(0, currentChar + 1);
+        currentChar++;
+
+        container.scrollTop = container.scrollHeight;
+
+        if (currentChar < pData.text.length) {
+          typeTimeout = setTimeout(typeNextChar, 25);
+        } else {
+          currentParagraph++;
+          currentChar = 0;
+          typeTimeout = setTimeout(typeNextChar, 300);
+        }
+      } else {
+        document.querySelectorAll('.typing-cursor').forEach(c => c.classList.remove('typing-cursor'));
+        isTyping = false;
+      }
+    }
 
     // A. LOGIKA HITUNG MUNDUR
     const targetDate = new Date("September 27, 2026 00:00:00").getTime();
@@ -372,28 +423,19 @@
 
     // B. LOGIKA KONTROL AUDIO VS VIDEO
     if (mainVideo) {
-      // Saat video mulai diputar atau diputar ulang (replay), PAUSE lagu latar belakang
       mainVideo.addEventListener('play', () => {
-        if (music && !music.paused) {
-          music.pause();
-        }
+        if (music && !music.paused) music.pause();
       });
 
-      // Saat video dipause atau selesai diputar (ended), RESUME lagu latar belakang
       mainVideo.addEventListener('pause', () => {
-        // Hanya putar lagi jika tidak sedang pindah ke step lain
         const currentStep4 = document.getElementById('step4');
         if (currentStep4 && currentStep4.classList.contains('active')) {
-          if (music && music.paused) {
-            music.play().catch(err => console.log(err));
-          }
+          if (music && music.paused) music.play().catch(err => console.log(err));
         }
       });
 
       mainVideo.addEventListener('ended', () => {
-        if (music && music.paused) {
-          music.play().catch(err => console.log(err));
-        }
+        if (music && music.paused) music.play().catch(err => console.log(err));
       });
     }
 
@@ -408,19 +450,21 @@
 
     // D. Perpindahan Halaman
     function nextStep(stepNumber) {
+      clearTimeout(typeTimeout);
+      isTyping = false;
+
       document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
       
       const targetCard = document.getElementById('step' + stepNumber);
       if (targetCard) targetCard.classList.add('active');
 
-      // Jika pindah dari halaman video, pastikan video mati dan lagu utama menyala
+      if (stepNumber === 2) {
+        startTypewriter();
+      }
+
       if (stepNumber !== 4) {
-        if (mainVideo && !mainVideo.paused) {
-          mainVideo.pause();
-        }
-        if (music && music.paused && stepNumber > 1) {
-          music.play().catch(err => console.log(err));
-        }
+        if (mainVideo && !mainVideo.paused) mainVideo.pause();
+        if (music && music.paused && stepNumber > 1) music.play().catch(err => console.log(err));
       }
     }
 
